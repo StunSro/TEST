@@ -1,0 +1,56 @@
+////////////////////////////////////////////
+TODO: Current Version 2.5.0
+/////////////////////////////////////////////
+(Minimize Exceptions, Improve CPU % I/O, Improve RAM usage, Improve core funcs)(Use BotsEngine as Stress test)
+[TODO]:
+
+[High-Priority]:
+- Code BA/CTF PC limit
+- Survival Arena, Hide & Seek, Battle Royale events
+- Add anti-flood system from the same ip.
+- debug and fix the block fellow pets while zerking (fix speed bug) 
+- verify if the every tp packet works as it should (check if it is not called for any other event)
+- verify if dispose lingering system works as it should.
+- Find a better way to detect an already disposed sock (Improve Core)
+- 
+
+[Low-Priority]:
+- Add in game menu (UI-elements), memory writing (.dll injector SR_EXT), (php in-game UI menu?)
+- Add another method to detect clientless tools (current one is based on a specific packet, check timespan on char loading screen animation)
+- Add Unique Target feature (partially done, only need to apply the skill on and off)
+- Fix the remote db backup, malfunctioned cause of outsourced filter
+- Add commands for VIP members (/auto trace, /supporters, /setguildnick, /return)
+- handle SILK_TIMER status change => disable, dispose all sockets, enable restart timers for each of the players
+- change title system, make it update for all near by chars.
+
+
+[Changelogs V2.5.0]:
+Recoded the INVISIBLITY,HELPER MARK SIGNATURES, some of them were called while they should not have been (caused 0x7042 spam on sr_shard, caused incremented cpu %)
+Fixed the sql exception thrown on FETCH_NOTICE()
+parsed info packets to save some queries
+Added the ability to reward every X time (Silk/h system)
+Fixed some object disposing errors while executing some queries, might have caused sql con leaks when an excpetion is occuring
+added reporter system, and license verf check
+Fixed the cause of sql timeout exceptions on some queries.
+Fixed 3 tiny bugs in the afk detection system, was cuasing the SR_ShardManager to spam msgs, was constantly sending the packets, was counting the conditions when it was not spawned.
+Fixed a tiny bug in the job-pc limit system.
+Fixed a tiny bug in the clientless system
+Fixed a bug in the spawn detection system, now its in 3 parts.
+Added a dead state,riding pet detection system
+Added an ability to spoof downloadserver.
+Fixed every tp packet.
+Add a asystem that will dispose lingering connection
+Added downloadserver cons to the refresh connections queue.
+Anti-invisiblity system will ignore your CL_Clientless char.
+Added a dump func for ag/gw fields
+Fixed the .EndConnect exception while one of the modules is offline
+Fixed some timezone related issues
+Minor cleanups, code refactoring.
+Recoded the logger type logic
+Fixed tiny logic misstakes in some queries.
+Recoded the sql class
+Recoded main
+Added a few dump options
+
+
+
